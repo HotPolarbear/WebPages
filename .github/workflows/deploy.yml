@@ -5,18 +5,23 @@ on:
     branches:
       - main
 
+permissions:
+  pages: write
+  id-token: write
+  contents: read
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy to GitHub Pages
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ./Portfolio   # or '.' if root
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
