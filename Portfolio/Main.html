@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- TITLE -->
+    <h1 id="card-title">Dataset Initialization</h1>
+
+    <!-- FLASHCARD CONTAINER -->
+    <div class="card-container">
+        <div class="card" id="card">
+
+            <!-- FRONT -->
+            <div class="card-face front">
+                <div class="code-card">
+                    <div class="header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+<pre><code id="code-content"></code></pre>
+                </div>
+            </div>
+
+            <!-- BACK -->
+            <div class="card-face back">
+                <div class="back-content" id="back-content"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
