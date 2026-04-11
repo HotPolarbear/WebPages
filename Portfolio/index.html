@@ -3,29 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flashcards</title>
+  <title>AI Learning — Flashcards</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="app">
 
-  <!-- TOPIC DROPDOWN -->
-  <div class="topic-dropdown">
-    <button class="topic-btn" id="topic-btn" aria-haspopup="listbox" aria-expanded="false">
-      <span id="topic-label">All Topics</span>
-      <svg class="chevron" id="chevron" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </button>
-    <ul class="topic-menu" id="topic-menu" role="listbox" aria-label="Select a topic"></ul>
+  <!-- SITE HEADER -->
+  <div class="site-header">
+    <h1 class="site-title">AI&nbsp;Learning</h1>
+    <p class="site-sub">From Python basics to deploying neural networks</p>
+  </div>
+
+  <!-- PROGRESS BAR -->
+  <div class="progress-wrap">
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-bar"></div>
+    </div>
+    <span class="progress-label" id="progress-label">0 / 0 cards seen</span>
+  </div>
+
+  <!-- LEARNING TIMELINE TREE -->
+  <div class="timeline-wrap" id="timeline-wrap">
+    <div class="timeline-scroll" id="timeline-scroll">
+      <svg id="timeline-svg" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+    <div class="tl-info" id="tl-info"></div>
   </div>
 
   <!-- CARD HEADER -->
   <div class="card-header">
-    <span class="topic-badge" id="topic-badge"></span>
-    <h1 id="card-title"></h1>
+    <div class="badge-row">
+      <span class="chapter-badge" id="chapter-badge"></span>
+      <span class="topic-badge" id="topic-badge"></span>
+    </div>
+    <h2 id="card-title"></h2>
   </div>
 
   <!-- FLASHCARD AREA -->
@@ -72,14 +85,15 @@
 
   </div>
 
-  <!-- INDEX -->
+  <!-- INDEX & MARK -->
   <div class="index-area">
     <div class="index-dots" id="index-dots"></div>
     <span class="index-label" id="index-label">1 / 1</span>
+    <button class="mark-btn" id="mark-btn">Mark seen</button>
   </div>
 
   <!-- HINT -->
-  <p class="hint">Click card to flip &nbsp;·&nbsp; Arrow keys or buttons to navigate</p>
+  <p class="hint">Click card to flip &nbsp;·&nbsp; ← → navigate &nbsp;·&nbsp; Space to flip &nbsp;·&nbsp; M to mark</p>
 
 </div>
 
