@@ -1,41 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flashcards</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="app">
 
-    <!-- TITLE -->
-    <h1 id="card-title">Dataset Initialization</h1>
+  <!-- TOPIC DROPDOWN -->
+  <div class="topic-dropdown">
+    <button class="topic-btn" id="topic-btn" aria-haspopup="listbox" aria-expanded="false">
+      <span id="topic-label">All Topics</span>
+      <svg class="chevron" id="chevron" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </button>
+    <ul class="topic-menu" id="topic-menu" role="listbox" aria-label="Select a topic"></ul>
+  </div>
 
-    <!-- FLASHCARD CONTAINER -->
+  <!-- CARD HEADER -->
+  <div class="card-header">
+    <span class="topic-badge" id="topic-badge"></span>
+    <h1 id="card-title"></h1>
+  </div>
+
+  <!-- FLASHCARD AREA -->
+  <div class="flashcard-area">
+
+    <button class="nav-btn" id="prev-btn" aria-label="Previous card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
     <div class="card-container">
-        <div class="card" id="card">
+      <div class="card" id="card">
 
-            <!-- FRONT -->
-            <div class="card-face front">
-                <div class="code-card">
-                    <div class="header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                    </div>
-<pre><code id="code-content"></code></pre>
-                </div>
+        <!-- FRONT -->
+        <div class="card-face front">
+          <div class="code-card">
+            <div class="header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="filename" id="filename">main.py</span>
             </div>
-
-            <!-- BACK -->
-            <div class="card-face back">
-                <div class="back-content" id="back-content"></div>
-            </div>
-
+            <pre><code id="code-content"></code></pre>
+          </div>
         </div>
+
+        <!-- BACK -->
+        <div class="card-face back">
+          <div class="back-content" id="back-content"></div>
+        </div>
+
+      </div>
+      <div class="card-glow"></div>
     </div>
+
+    <button class="nav-btn" id="next-btn" aria-label="Next card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+  </div>
+
+  <!-- INDEX -->
+  <div class="index-area">
+    <div class="index-dots" id="index-dots"></div>
+    <span class="index-label" id="index-label">1 / 1</span>
+  </div>
+
+  <!-- HINT -->
+  <p class="hint">Click card to flip &nbsp;·&nbsp; Arrow keys or buttons to navigate</p>
 
 </div>
 
